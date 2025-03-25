@@ -8,7 +8,7 @@ export default defineConfig({
     lib: {
       entry: path.resolve(__dirname, "src/index.js"),
       name: "Vue3Fileinput",
-      fileName: (format) => `vue3-filedrag.${format}.js`
+      fileName: (format) => `Vue3Fileinput.${format}.js`
     },
     rollupOptions: {
       external: ["vue"],

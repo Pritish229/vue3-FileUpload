@@ -4,10 +4,10 @@ const N = (l, f) => {
   for (const [a, n] of f)
     d[a] = n;
   return d;
-}, U = { class: "upload-text" }, L = {
+}, L = { class: "upload-text" }, O = {
   key: 1,
   class: "preview"
-}, O = ["src", "alt"], P = ["accept"], $ = {
+}, P = ["src", "alt"], U = ["accept"], $ = {
   key: 0,
   class: "error-message"
 }, A = {
@@ -42,7 +42,7 @@ const N = (l, f) => {
   },
   emits: ["update:modelValue", "file-reset"],
   setup(l, { expose: f, emit: d }) {
-    const a = l, n = d, o = r(null), x = r(null), i = r(""), p = r(!0), m = r(a.modelValue || null), v = r(!1), _ = a.fileType.join(","), g = r("");
+    const a = l, n = d, i = r(null), x = r(null), o = r(""), p = r(!0), m = r(a.modelValue || null), v = r(!1), _ = a.fileType.join(","), g = r("");
     M(
       () => a.modelValue,
       (e) => {
@@ -73,21 +73,21 @@ const N = (l, f) => {
         k(`File is too large. Maximum size is ${t}MB.`);
         return;
       }
-      i.value = "", p.value = !0, m.value = e, n("update:modelValue", e), T(e);
+      o.value = "", p.value = !0, m.value = e, n("update:modelValue", e), T(e);
     }, T = (e) => {
       const t = new FileReader();
       e.type.startsWith("image/") ? (t.onload = (I) => {
-        o.value = I.target.result, g.value = "Preview";
-      }, t.readAsDataURL(e)) : (o.value = "", g.value = "File Preview");
+        i.value = I.target.result, g.value = "Preview";
+      }, t.readAsDataURL(e)) : (i.value = "", g.value = "File Preview");
     }, k = (e) => {
-      y(), i.value = e, p.value = !1;
+      y(), o.value = e, p.value = !1;
     }, y = () => {
-      o.value = null, m.value = null, i.value = "", p.value = !0, n("update:modelValue", null), n("file-reset");
+      i.value = null, m.value = null, o.value = "", p.value = !0, n("update:modelValue", null), n("file-reset");
     };
-    return f({ resetFile: y, selectedFile: m, isFileValid: p, preview: o }), (e, t) => (u(), s("div", null, [
+    return f({ resetFile: y, selectedFile: m, isFileValid: p, preview: i }), (e, t) => (u(), s("div", null, [
       c("div", {
         class: w(["drop-zone", {
-          "error-border error-file": i.value || l.inValid,
+          "error-border error-file": o.value || l.inValid,
           dragging: v.value
         }]),
         onClick: z,
@@ -95,12 +95,12 @@ const N = (l, f) => {
         onDragleave: h(D, ["prevent"]),
         onDrop: h(b, ["prevent"])
       }, [
-        o.value ? (u(), s("div", L, [
+        i.value ? (u(), s("div", O, [
           c("img", {
-            src: o.value,
+            src: i.value,
             alt: g.value,
             class: "preview-image"
-          }, null, 8, O)
+          }, null, 8, P)
         ])) : (u(), s("div", {
           key: 0,
           class: w({ "placeholder-error": l.inValid, placeholder: !l.inValid })
@@ -108,7 +108,7 @@ const N = (l, f) => {
           C(e.$slots, "icon", {}, () => [
             t[0] || (t[0] = c("i", { class: "fas fa-upload upload-icon fs-4" }, null, -1))
           ], !0),
-          c("p", U, F(l.placeholder), 1)
+          c("p", L, F(l.placeholder), 1)
         ], 2)),
         c("input", {
           type: "file",
@@ -117,14 +117,14 @@ const N = (l, f) => {
           onChange: B,
           hidden: "",
           accept: E(_)
-        }, null, 40, P)
+        }, null, 40, U)
       ], 34),
-      i.value ? (u(), s("p", $, F(i.value), 1)) : l.helperText ? (u(), s("p", A, F(l.helperText), 1)) : j("", !0)
+      o.value ? (u(), s("p", $, F(o.value), 1)) : l.helperText ? (u(), s("p", A, F(l.helperText), 1)) : j("", !0)
     ]));
   }
 }, q = /* @__PURE__ */ N(R, [["__scopeId", "data-v-d2bd141b"]]), G = {
   install(l) {
-    l.component("FileUpload", q);
+    l.component("Vue3Fileinput", q);
   }
 };
 export {
