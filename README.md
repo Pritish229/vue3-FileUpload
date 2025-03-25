@@ -14,7 +14,7 @@ A Vue 3 drag-and-drop file upload component with validation, preview, and error 
 - **Customizable upload icon using a slot**  
 
 ## Demo  
-![Vue3FileUpload Demo](./src/Preview.png)  
+![Vue3FileUpload Demo](src/Preview.png)  
 
 ---
 
