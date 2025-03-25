@@ -14,7 +14,7 @@ A Vue 3 drag-and-drop file upload component with validation, preview, and error 
 - **Customizable upload icon using a slot**  
 
 ## Demo  
-![Vue3FileDrag Demo](./src/Preview.png)  
+![Vue3FileUpload Demo](./src/Preview.png)  
 
 ---
 
@@ -23,7 +23,7 @@ A Vue 3 drag-and-drop file upload component with validation, preview, and error 
 This component is designed to be used in a Vue 3 project with the Composition API.  
 
 ```bash
-npm i vue3-filedrag
+npm i vue3-fileupload
 ```  
 
 ---
@@ -47,7 +47,7 @@ Import and use the component in a specific Vue file:
 
 <script setup>
 import { ref } from "vue";
-import { Vue3FileDrag } from "vue3-filedrag"; // Import component
+import { fileupload } from "vue3-fileupload"; // Import component
 
 const uploadedFile = ref(null);
 </script>
@@ -64,21 +64,21 @@ To register the component globally in your Vue 3 project:
 ```javascript
 import { createApp } from "vue";
 import App from "./App.vue";
-import Vue3FileDrag from "vue3-filedrag"; // Import the package
+import Vue3fileupload from "vue3-fileupload"; // Import the package
 
 const app = createApp(App);
 
-app.use(Vue3FileDrag); // Register globally
+app.use(Vue3fileupload); // Register globally
 app.mount("#app");
 ```
 
 #### Step 2: Use in Any Component  
 
-Once registered globally, you can **use `<Vue3FileDrag>` anywhere** without importing it again:  
+Once registered globally, you can **use `<FileUpload>` anywhere** without importing it again:  
 
 ```vue
 <template>
-  <Vue3FileDrag v-model="uploadedFile" />
+  <FileUpload v-model="uploadedFile" />
 </template>
 
 <script setup>
@@ -99,11 +99,11 @@ const uploadedFile = ref(null);
 ### Using the Slot for Custom Icons  
 
 ```vue
-<Vue3FileDrag v-model="uploadedFile">
+<FileUpload v-model="uploadedFile">
   <template #icon>
     <i class="fas fa-folder-plus upload-icon"></i>
   </template>
-</Vue3FileDrag>
+</FileUpload>
 ```
 
 ---
@@ -139,7 +139,7 @@ To manually reset the file selection, use:
 ```vue
 <script setup>
 import { ref } from "vue";
-import Vue3FileDrag from "./Vue3FileDrag.vue";
+import FileUpload from "./FileUpload.vue";
 
 const fileUploadRef = ref(null);
 
@@ -158,7 +158,7 @@ To set a file preview (e.g., from an API response), use:
 ```vue
 <script setup>
 import { ref, onMounted } from "vue";
-import Vue3FileDrag from "./Vue3FileDrag.vue";
+import FileUpload from "./FileUpload.vue";
 
 const fileUploadRef = ref(null);
 const imagepath = ref(
@@ -182,3 +182,4 @@ The component is styled with scoped CSS and can be customized further based on y
 ## License  
 
 This component is open-source and can be modified as needed.
+
