@@ -14,7 +14,7 @@ A Vue 3 drag-and-drop file upload component with validation, preview, and error 
 - **Customizable upload icon using a slot**  
 
 ## Demo  
-![Vue3FileUpload Demo](src/Preview.png)  
+![Vue3FileUpload Demo](./src/Preview.png)
 
 ---
 
@@ -23,7 +23,7 @@ A Vue 3 drag-and-drop file upload component with validation, preview, and error 
 This component is designed to be used in a Vue 3 project with the Composition API.  
 
 ```bash
-npm i vue3-fileupload
+npm i vue3-fileinput
 ```  
 
 ---
@@ -47,7 +47,7 @@ Import and use the component in a specific Vue file:
 
 <script setup>
 import { ref } from "vue";
-import { fileupload } from "vue3-fileupload"; // Import component
+import { FileUpload } from "vue3-fileinput"; // Corrected import
 
 const uploadedFile = ref(null);
 </script>
@@ -64,11 +64,11 @@ To register the component globally in your Vue 3 project:
 ```javascript
 import { createApp } from "vue";
 import App from "./App.vue";
-import Vue3fileupload from "vue3-fileupload"; // Import the package
+import Vue3Fileinput from "vue3-fileinput"; // Corrected import
 
 const app = createApp(App);
 
-app.use(Vue3fileupload); // Register globally
+app.use(Vue3Fileinput); // Register globally
 app.mount("#app");
 ```
 
@@ -182,4 +182,3 @@ The component is styled with scoped CSS and can be customized further based on y
 ## License  
 
 This component is open-source and can be modified as needed.
-
