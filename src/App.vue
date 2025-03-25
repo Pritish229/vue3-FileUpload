@@ -3,7 +3,7 @@
 </script>
 
 <template>
-  hekk
+
 </template>
 
 <style scoped>

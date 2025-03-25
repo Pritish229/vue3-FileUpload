@@ -1,9 +1,10 @@
-import fileupload from "./components/FileUpload.vue";
+import FileUpload from "./components/FileUpload.vue";
 
-const Vue3fileupload = {
+const Vue3Fileinput = {
   install(app) {
-    app.component("fileupload", fileupload);
+    app.component("FileUpload", FileUpload);
   }
 };
 
-export { fileupload, Vue3fileupload };
+export { FileUpload, Vue3Fileinput };
+export default Vue3Fileinput;
