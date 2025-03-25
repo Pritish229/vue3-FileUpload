@@ -1,6 +1,6 @@
 {
   "name": "vue3-filedrag",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "A Vue 3 drag-and-drop file upload component with validation, preview, and error handling.",
   "main": "dist/vue3-filedrag.umd.js",
   "module": "dist/vue3-filedrag.es.js",
