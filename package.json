@@ -5,7 +5,7 @@
   "main": "dist/vue3-filedrag.umd.js",
   "module": "dist/vue3-filedrag.es.js",
   "files": ["dist"],
-  "private": true,
+  "private": false,
   "type": "module",
   "scripts": {
     "dev": "vite",

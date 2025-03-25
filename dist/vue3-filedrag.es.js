@@ -1,4 +1,4 @@
-import { ref as r, watch as b, createElementBlock as s, openBlock as u, createElementVNode as c, createCommentVNode as j, withModifiers as h, normalizeClass as w, renderSlot as C, toDisplayString as x, unref as E } from "vue";
+import { ref as r, watch as b, createElementBlock as s, openBlock as u, createElementVNode as c, createCommentVNode as j, withModifiers as h, normalizeClass as k, renderSlot as C, toDisplayString as F, unref as E } from "vue";
 const N = (l, f) => {
   const d = l.__vccOpts || l;
   for (const [t, n] of f)
@@ -42,15 +42,15 @@ const N = (l, f) => {
   },
   emits: ["update:modelValue", "file-reset"],
   setup(l, { expose: f, emit: d }) {
-    const t = l, n = d, i = r(null), F = r(null), o = r(""), p = r(!0), g = r(t.modelValue || null), v = r(!1), D = t.fileType.join(","), m = r("");
+    const t = l, n = d, i = r(null), x = r(null), o = r(""), p = r(!0), g = r(t.modelValue || null), v = r(!1), w = t.fileType.join(","), m = r("");
     b(
       () => t.modelValue,
       (e) => {
-        e ? T(e) : y();
+        e ? D(e) : y();
       }
     );
     const _ = () => {
-      F.value.click();
+      x.value.click();
     }, z = (e) => {
       e.dataTransfer.dropEffect = "copy", v.value = !0;
     }, S = () => {
@@ -65,28 +65,28 @@ const N = (l, f) => {
     }, V = (e) => {
       if (!e) return;
       if (!t.fileType.includes(e.type)) {
-        k(`Invalid file type. Only ${t.fileType.join(", ")} allowed.`);
+        T(`Invalid file type. Only ${t.fileType.join(", ")} allowed.`);
         return;
       }
       const a = (t.maxSize / (1024 * 1024)).toFixed(2);
       if (e.size > t.maxSize) {
-        k(`File is too large. Maximum size is ${a}MB.`);
+        T(`File is too large. Maximum size is ${a}MB.`);
         return;
       }
-      o.value = "", p.value = !0, g.value = e, n("update:modelValue", e), T(e);
-    }, T = (e) => {
+      o.value = "", p.value = !0, g.value = e, n("update:modelValue", e), D(e);
+    }, D = (e) => {
       const a = new FileReader();
       e.type.startsWith("image/") ? (a.onload = (M) => {
         i.value = M.target.result, m.value = "Preview";
       }, a.readAsDataURL(e)) : (i.value = "", m.value = "File Preview");
-    }, k = (e) => {
+    }, T = (e) => {
       y(), o.value = e, p.value = !1;
     }, y = () => {
       i.value = null, g.value = null, o.value = "", p.value = !0, n("update:modelValue", null), n("file-reset");
     };
     return f({ resetFile: y, selectedFile: g, isFileValid: p, preview: i }), (e, a) => (u(), s("div", null, [
       c("div", {
-        class: w(["drop-zone", {
+        class: k(["drop-zone", {
           "error-border error-file": o.value || l.inValid,
           dragging: v.value
         }]),
@@ -103,23 +103,23 @@ const N = (l, f) => {
           }, null, 8, P)
         ])) : (u(), s("div", {
           key: 0,
-          class: w({ "placeholder-error": l.inValid, placeholder: !l.inValid })
+          class: k({ "placeholder-error": l.inValid, placeholder: !l.inValid })
         }, [
           C(e.$slots, "icon", {}, () => [
             a[0] || (a[0] = c("i", { class: "fas fa-upload upload-icon fs-4" }, null, -1))
           ], !0),
-          c("p", L, x(l.placeholder), 1)
+          c("p", L, F(l.placeholder), 1)
         ], 2)),
         c("input", {
           type: "file",
           ref_key: "fileInput",
-          ref: F,
+          ref: x,
           onChange: I,
           hidden: "",
-          accept: E(D)
+          accept: E(w)
         }, null, 40, $)
       ], 34),
-      o.value ? (u(), s("p", A, x(o.value), 1)) : l.helperText ? (u(), s("p", R, x(l.helperText), 1)) : j("", !0)
+      o.value ? (u(), s("p", A, F(o.value), 1)) : l.helperText ? (u(), s("p", R, F(l.helperText), 1)) : j("", !0)
     ]));
   }
 }, U = /* @__PURE__ */ N(q, [["__scopeId", "data-v-7a39e182"]]), G = {
@@ -129,5 +129,5 @@ const N = (l, f) => {
 };
 export {
   U as FileDrag,
-  G as default
+  G as Vue3FileDrag
 };

@@ -1,9 +1,9 @@
 import FileDrag from "./components/FileDrag.vue";
 
-export { FileDrag };
-
-export default {
+const Vue3FileDrag = {
   install(app) {
     app.component("FileDrag", FileDrag);
   }
 };
+
+export { FileDrag, Vue3FileDrag };
