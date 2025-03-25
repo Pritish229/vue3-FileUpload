@@ -1,22 +1,22 @@
 {
   "name": "vue3-fileinput",
-  "version": "0.0.9",
+  "version": "0.0.7",
   "description": "A Vue 3 drag-and-drop file upload component with validation, preview, and error handling.",
-  "main": "dist/vue3-fileinput.umd.cjs",
-  "module": "dist/vue3-fileinput.es.js",
-  "exports": {
-    "import": "./dist/vue3-fileinput.es.js",
-    "require": "./dist/vue3-fileinput.umd.cjs",
-    "default": "./dist/vue3-fileinput.es.js"
-  },
+    "main": "dist/vue3-fileinput.umd.js",
+    "module": "dist/vue3-fileinput.es.js",
+    "exports": {
+      ".": {
+        "import": "./dist/vue3-fileinput.es.js",
+        "require": "./dist/vue3-fileinput.umd.js"
+      }
+    },
   "files": [
-    "dist",
-    "src/components/FileUpload.vue"
+    "dist"
   ],
   "type": "module",
   "scripts": {
-    "build": "vite build",
     "dev": "vite",
+    "build": "vite build",
     "preview": "vite preview",
     "version": "npm version patch",
     "publish": "npm publish --access public"
@@ -29,7 +29,8 @@
   },
   "devDependencies": {
     "@vitejs/plugin-vue": "^5.2.1",
-    "vite": "^6.2.1"
+    "vite": "^6.2.1",
+    "vite-plugin-vue-devtools": "^7.7.2"
   },
   "repository": {
     "type": "git",
