@@ -36,7 +36,7 @@ Import and use the component in a specific Vue file:
 
 ```vue
 <template>
-  <FileUpload
+  <Vue3Fileinput
     v-model="uploadedFile"
     :fileType="['image/png', 'image/jpeg', 'application/pdf']"
     :maxSize="5 * 1024 * 1024"
@@ -47,9 +47,12 @@ Import and use the component in a specific Vue file:
 
 <script setup>
 import { ref } from "vue";
-import { FileUpload } from "vue3-fileinput"; // Corrected import
+import Vue3Fileinput  from "vue3-fileinput"; 
+import "vue3-fileinput/dist/vue3-fileinput.css";
+
 
 const uploadedFile = ref(null);
+
 </script>
 ```
 
@@ -62,23 +65,27 @@ To register the component globally in your Vue 3 project:
 #### Step 1: Register in `main.js` or `main.ts`  
 
 ```javascript
-import { createApp } from "vue";
-import App from "./App.vue";
-import Vue3Fileinput from "vue3-fileinput"; // Corrected import
+import './assets/main.css'
 
-const app = createApp(App);
+import { createApp } from 'vue'
+import Vue3Fileinput from 'vue3-fileinput'
+import "vue3-fileinput/dist/vue3-fileinput.css";
 
-app.use(Vue3Fileinput); // Register globally
-app.mount("#app");
+import App from './App.vue'
+const app = createApp(App)
+
+app.use(Vue3Fileinput)
+app.mount('#app')
+
 ```
 
 #### Step 2: Use in Any Component  
 
-Once registered globally, you can **use `<FileUpload>` anywhere** without importing it again:  
+Once registered globally, you can **use `<Vue3Fileinput>` anywhere** without importing it again:  
 
 ```vue
 <template>
-  <FileUpload v-model="uploadedFile" />
+  <Vue3Fileinput v-model="uploadedFile" />
 </template>
 
 <script setup>
@@ -99,11 +106,11 @@ const uploadedFile = ref(null);
 ### Using the Slot for Custom Icons  
 
 ```vue
-<FileUpload v-model="uploadedFile">
+<Vue3Fileinput v-model="uploadedFile">
   <template #icon>
     <i class="fas fa-folder-plus upload-icon"></i>
   </template>
-</FileUpload>
+</Vue3Fileinput>
 ```
 
 ---
@@ -139,8 +146,8 @@ To manually reset the file selection, use:
 ```vue
 <script setup>
 import { ref } from "vue";
-import FileUpload from "./FileUpload.vue";
-
+import Vue3Fileinput from 'vue3-fileinput'
+import "vue3-fileinput/dist/vue3-fileinput.css";
 const fileUploadRef = ref(null);
 
 const resetFile = () => {
@@ -158,7 +165,8 @@ To set a file preview (e.g., from an API response), use:
 ```vue
 <script setup>
 import { ref, onMounted } from "vue";
-import FileUpload from "./FileUpload.vue";
+import Vue3Fileinput from 'vue3-fileinput'
+import "vue3-fileinput/dist/vue3-fileinput.css";
 
 const fileUploadRef = ref(null);
 const imagepath = ref(
