@@ -1,16 +1,16 @@
 {
   "name": "vue3-fileinput",
-  "version": "0.0.10",
+  "version": "0.0.11",
   "description": "A Vue 3 drag-and-drop file upload component with validation, preview, and error handling.",
-    "main": "dist/Vue3Fileinput.umd.js",
-    "module": "dist/Vue3Fileinput.es.js",
-    "exports": {
-      ".": {
-        "import": "./dist/Vue3Fileinput.es.js",
-        "require": "./dist/Vue3Fileinput.umd.js"
-      },
-      "./dist/vue3-fileinput.css": "./dist/vue3-fileinput.css"
+  "main": "dist/Vue3Fileinput.umd.js",
+  "module": "dist/Vue3Fileinput.es.js",
+  "exports": {
+    ".": {
+      "import": "./dist/Vue3Fileinput.es.js",
+      "require": "./dist/Vue3Fileinput.umd.js"
     },
+    "./dist/vue3-fileinput.css": "./dist/vue3-fileinput.css"
+  },
   "files": [
     "dist"
   ],
