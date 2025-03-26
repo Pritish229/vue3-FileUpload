@@ -8,16 +8,14 @@ export default defineConfig({
     lib: {
       entry: path.resolve(__dirname, "src/index.js"), // Your main entry file
       name: "Vue3Fileinput",
-      fileName: (format) => `vue3-fileinput.${format}.js`,
-      formats: ["es", "umd"]
+      fileName: (format) => `Vue3Fileinput.${format}.js`,
     },
     rollupOptions: {
       external: ["vue"],
       output: {
         globals: {
           vue: "Vue"
-        },
-        exports: "named"
+        }
       }
     }
   }
